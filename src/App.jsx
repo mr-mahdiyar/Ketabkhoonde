@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { Navbar } from "./"
 const App = () => {
   return (
     <div>
-      In the name of god...
+      <Navbar />
     </div>
   )
 }
