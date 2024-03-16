@@ -1,5 +1,23 @@
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Dirooz";
+        src: url(./assets/fonts/Dirooz/Dirooz-FD.ttf);
+    }
+    @font-face {
+        font-family: "Diplomat";
+        src: url(./assets/fonts/Diplomat/Far_Diplomat.ttf);
+    }
+    @font-face {
+        font-family: "Ordibehesht";
+        src: url(./assets/fonts/Ordibehesht/Ordibehesht.ttf);
+    }
 }
