@@ -8,23 +8,26 @@ const DiscountedBooks = () => {
         component="div"
         display={"flex"}
         justifyContent={"space-evenly"}
+        alignItems={{xs: "center"}}
         marginTop={0.5}
         padding={2}
         bgcolor={"customGray.main"}
         fontFamily={"Ordibehesht"}
         sx={{ wordSpacing: "0.1rem" }}
+        flexDirection={{xs: "column", md: "row"}}
       >
-        <Box component={"div"} className="image-wrapper" maxWidth={"20%"} boxShadow={"5px 5px 20px rgba(0, 0, 0, 1)"}>
-          <img src={ImageSrc} alt="" className="w-100" />
+        <Box component={"div"} className="image-wrapper" maxWidth={{xs: "50%", md: "30%"}} display={"flex"} alignItems={"center"}>
+          <img src={ImageSrc} alt="" className="w-100 drop-shadow-pictureShdow"/>
         </Box>
         <Box
           component={"div"}
           className="texts-wrapper"
           display={"flex"}
           flexDirection={"column"}
-          maxWidth={"60%"}
+          maxWidth={{xs: "90%", md: "60%"}}
+          marginTop={{xs: "1rem", md: "0"}}
         >
-          <Box component={"div"} className="title-wrapper" fontSize={"32px"}>
+          <Box component={"div"} className="title-wrapper" fontSize={{xs: "22px", md: "32px"}} textAlign={"center"}>
             <Box component={"span"}>بیمار خاموش </Box>
             را با
             <Box component={"sapn"} color={"red"}>

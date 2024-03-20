@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      dropShadow: {
+        "pictureShdow": "5px 5px 5px rgba(0, 0, 0, 0.75)" 
+      }
+    },
     colors: {
       "customBlue": "#00c0e2",
       "customGreen": "#50DBB4",
