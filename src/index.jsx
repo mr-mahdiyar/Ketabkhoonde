@@ -4,3 +4,4 @@ export { default as Intro } from "./components/Intro";
 export { default as Slider } from "./components/Slider";
 export { default as HomePage } from "./Pages/HomePage";
 export { default as DiscountedBooks } from "./components/DiscountedBooks";
+export { default as Footer } from "./components/Footer";
