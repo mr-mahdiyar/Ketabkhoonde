@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
-import { Navbar, Footer } from "./";
+import React, { useEffect, useState } from "react";
+import { Navbar, Intro, Slider, Footer } from "./";
 // import AddbookForm from "./components/AddbookForm";
-import { useDispatch } from "react-redux";
-import { getAllBooksFromServer } from "./app/booksSLice";
-import { Outlet } from "react-router-dom";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { getAllBooksFromServer, selectAllBooks } from "./app/booksSLice";
+import { Outlet, useLocation } from "react-router-dom";
 
 const App = () => {
-  
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllBooksFromServer())
-  }, [])
-
+    dispatch(getAllBooksFromServer());
+  }, []);
+  const books = useSelector(selectAllBooks);
+  const { pathname } = useLocation();
   return (
     <div>
       <Navbar />
+      {pathname === "/" ? <Intro /> : null}
+      <Slider sliderBooks={books.slice(books.length - 7, books.length)} />
       {/* <AddbookForm /> */}
       <Outlet />
       <Footer />

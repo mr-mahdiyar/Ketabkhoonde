@@ -1,10 +1,9 @@
 import React from 'react'
-import {Intro, Slider, DiscountedBooks} from "../"
+import {Slider, DiscountedBooks} from "../"
 const HomePage = () => {
   return (
     <div>
-      <Intro />
-      <Slider />
+      {/* <Slider /> */}
       <DiscountedBooks />
     </div>
   )
