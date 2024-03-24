@@ -1,9 +1,10 @@
 import React from "react";
 import { Box, List, ListItem, ListItemText } from "@mui/material";
-import Image from "../assets/BooksImages/01.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
+import "swiper/css/autoplay";
 
 const Slider = ({ sliderBooks, authors }) => {
   return (
@@ -16,12 +17,16 @@ const Slider = ({ sliderBooks, authors }) => {
         minHeight="15rem"
       >
         <Swiper
-          slidesPerView={3.5}
+          modules={[Autoplay]}
+          autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
+          // slidesPerView={3.5}
+          slidesPerView={3}
           spaceBetween={10}
           initialSlide={2}
           centeredSlides
           centeredSlidesBounds
           freeMode
+          loop
           breakpoints={{
             300: {
               slidesPerView: 1.4,
@@ -30,12 +35,11 @@ const Slider = ({ sliderBooks, authors }) => {
               slidesPerView: 1.75,
             },
             1300: {
-              slidesPerView: 3.5,
+              slidesPerView: 3
             },
           }}
         >
           {sliderBooks.map((book) => (
-            
             <SwiperSlide key={book?.bookId}>
               <Box
                 className="image-text-container"
@@ -80,7 +84,8 @@ const Slider = ({ sliderBooks, authors }) => {
                       <ListItemText primary="نویسنده: " />
                       <ListItemText
                         primary={
-                          authors.find(author => author.id === book.authorId)?.name
+                          authors.find((author) => author.id === book.authorId)
+                            ?.name
                         }
                         primaryTypographyProps={{
                           textAlign: "start",
