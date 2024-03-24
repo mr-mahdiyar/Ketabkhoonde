@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import ImageSrc from "../assets/BooksImages/4.jpg";
+import ImageSrc from "../assets/BooksImages/04.jpg";
 const DiscountedBooks = () => {
   return (
     <>
@@ -53,7 +53,7 @@ const DiscountedBooks = () => {
             <Typography marginTop={2} fontFamily={"Diplomat"} fontSize={"20px"}>
               مترجم:
               <Box component={"span"} marginRight={0.5}>
-                بهناز همتی
+                سپیده سرطاوی
               </Box>
             </Typography>
             <Typography marginTop={2} fontFamily={"Diplomat"} fontSize={"20px"}>

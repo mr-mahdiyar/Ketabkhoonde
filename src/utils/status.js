@@ -1,0 +1,6 @@
+export const STATUS = {
+  IDEL: "IDLE",
+  LOADING: "LOADING",
+  FULFILLED: "FULFILLED",
+  REJECTED: "REJECTED",
+};

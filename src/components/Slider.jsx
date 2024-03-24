@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, List, ListItem, ListItemText } from "@mui/material";
-import Image from "../assets/BooksImages/1.jpg";
+import Image from "../assets/BooksImages/01.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 const staticSliderItem = () => {
