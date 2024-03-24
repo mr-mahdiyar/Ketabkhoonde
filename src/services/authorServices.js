@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverUrl = "https://localhost:9000";
+const serverUrl = "http://localhost:9000";
 
 // get all authors
 export const getAllAuthors = () => {

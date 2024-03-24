@@ -4,12 +4,8 @@ import Image from "../assets/BooksImages/01.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/css";
-// const staticSliderItem = () => {
-//   return (
 
-//   );
-// };
-const Slider = ({ sliderBooks }) => {
+const Slider = ({ sliderBooks, authors }) => {
   return (
     <div>
       <Box
@@ -39,7 +35,8 @@ const Slider = ({ sliderBooks }) => {
           }}
         >
           {sliderBooks.map((book) => (
-            <SwiperSlide>
+            
+            <SwiperSlide key={book?.bookId}>
               <Box
                 className="image-text-container"
                 component="div"
@@ -82,7 +79,9 @@ const Slider = ({ sliderBooks }) => {
                     <ListItem>
                       <ListItemText primary="نویسنده: " />
                       <ListItemText
-                        primary="بوستین گردر"
+                        primary={
+                          authors.find(author => author.id === book.authorId)?.name
+                        }
                         primaryTypographyProps={{
                           textAlign: "start",
                           marginRight: "0.4rem",

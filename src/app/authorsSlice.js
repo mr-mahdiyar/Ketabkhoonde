@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { STATUS } from "../utils/status";
 import {
   getAllAuthors,
-  getAuthorById,
   addAuthor,
 } from "../services/authorServices";
 const initialState = {
@@ -56,3 +55,7 @@ export const addAuthorToServer = createAsyncThunk(
     return response.data;
   }
 );
+
+export const selectAuthorById = (state, authorId) => state.author.authors.find(author => author.id === authorId)
+export const selectAllAuthors = (state) => state.authors.authors
+export default authorSlice.reducer;
