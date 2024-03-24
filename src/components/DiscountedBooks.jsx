@@ -16,8 +16,8 @@ const DiscountedBooks = () => {
         sx={{ wordSpacing: "0.1rem" }}
         flexDirection={{xs: "column", md: "row"}}
       >
-        <Box component={"div"} className="image-wrapper" maxWidth={{xs: "50%", md: "30%"}} display={"flex"} alignItems={"center"}>
-          <img src={ImageSrc} alt="" className="w-100 drop-shadow-pictureShdow"/>
+        <Box component={"div"} className="image-wrapper" maxWidth={{xs: "50%", md: "25%"}} display={"flex"} alignItems={"center"}>
+          <img src={ImageSrc} alt="" className="w-full object-fill aspect-[0.7] drop-shadow-pictureShdow"/>
         </Box>
         <Box
           component={"div"}
@@ -27,7 +27,7 @@ const DiscountedBooks = () => {
           maxWidth={{xs: "90%", md: "60%"}}
           marginTop={{xs: "1rem", md: "0"}}
         >
-          <Box component={"div"} className="title-wrapper" fontSize={{xs: "22px", md: "32px"}} textAlign={"center"}>
+          <Box component={"div"} className="title-wrapper" fontSize={{xs: "22px", md: "32px"}} textAlign={{xs: "center", md: "right"}}>
             <Box component={"span"}>بیمار خاموش </Box>
             را با
             <Box component={"sapn"} color={"red"}>
