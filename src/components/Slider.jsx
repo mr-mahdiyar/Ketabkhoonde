@@ -35,12 +35,12 @@ const Slider = ({ sliderBooks, authors }) => {
               slidesPerView: 1.75,
             },
             1300: {
-              slidesPerView: 3
+              slidesPerView: 3.01,
             },
           }}
         >
           {sliderBooks.map((book) => (
-            <SwiperSlide key={book?.bookId}>
+            <SwiperSlide key={book?.id}>
               <Box
                 className="image-text-container"
                 component="div"
@@ -56,7 +56,7 @@ const Slider = ({ sliderBooks, authors }) => {
                   className="image-container"
                   maxWidth={{ xs: "75%", sm: "40%" }}
                 >
-                  <Link to={`books/${book?.bookId}`} className="w-full">
+                  <Link to={`books/${book?.id}`} className="w-full">
                     <img
                       src={book?.photo}
                       className="w-3/5 m-auto sm:w-full aspect-[0.7] rounded-md"
@@ -83,10 +83,7 @@ const Slider = ({ sliderBooks, authors }) => {
                     <ListItem>
                       <ListItemText primary="نویسنده: " />
                       <ListItemText
-                        primary={
-                          authors.find((author) => author.id === book.authorId)
-                            ?.name
-                        }
+                        primary={authors.find((author) => author.id === book.authorId)?.name}
                         primaryTypographyProps={{
                           textAlign: "start",
                           marginRight: "0.4rem",
