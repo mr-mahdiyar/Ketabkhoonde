@@ -5,3 +5,5 @@ export { default as Slider } from "./components/Slider";
 export { default as HomePage } from "./Pages/HomePage";
 export { default as DiscountedBooks } from "./components/DiscountedBooks";
 export { default as Footer } from "./components/Footer";
+export { default as BookCard } from "./components/BookCard";
+export { default as AllBooks } from "./Pages/AllBooks";

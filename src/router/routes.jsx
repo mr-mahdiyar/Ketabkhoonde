@@ -1,12 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import { App, HomePage } from "../";
+import { App, HomePage, AllBooks } from "../";
 export const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{
+    children: [
+      {
         path: "/",
-        element: <HomePage />
-    }],
+        element: <HomePage />,
+      },
+      {
+        path: "/books",
+        element: <AllBooks />,
+      },
+    ],
   },
 ]);
