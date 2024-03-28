@@ -18,7 +18,7 @@ const Slider = ({ sliderBooks, authors }) => {
       >
         <Swiper
           modules={[Autoplay]}
-          autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
+          // autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
           // slidesPerView={3.5}
           slidesPerView={3}
           spaceBetween={10}
@@ -66,17 +66,15 @@ const Slider = ({ sliderBooks, authors }) => {
                 <Box className="text-wrapper" minWidth="50%" marginLeft="1rem">
                   <List>
                     <ListItem>
-                      <ListItemText primary="نام کتاب: " />
                       <ListItemText
-                        primary={
-                          book?.name.length > 10
-                            ? `${book?.name.slice(0, 10)}...`
-                            : book?.name
-                        }
+                        primary={book?.name}
+                        sx={{marginX: "auto"}}
                         primaryTypographyProps={{
-                          textAlign: "start",
-                          marginRight: "0.4rem",
+                          textAlign: "center",
                           fontSize: { xs: "16px", sm: "18px" },
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
                         }}
                       />
                     </ListItem>
