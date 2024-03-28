@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, List, ListItem, ListItemText } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -18,7 +18,7 @@ const Slider = ({ sliderBooks, authors }) => {
       >
         <Swiper
           modules={[Autoplay]}
-          // autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
+          autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
           // slidesPerView={3.5}
           slidesPerView={3}
           spaceBetween={10}
@@ -39,7 +39,7 @@ const Slider = ({ sliderBooks, authors }) => {
             },
           }}
         >
-          {sliderBooks.map((book) => (
+          {sliderBooks.sort(() => Math.random() - 0.5).map((book) => (
             <SwiperSlide key={book?.id}>
               <Box
                 className="image-text-container"
@@ -68,7 +68,7 @@ const Slider = ({ sliderBooks, authors }) => {
                     <ListItem>
                       <ListItemText
                         primary={book?.name}
-                        sx={{marginX: "auto"}}
+                        sx={{ marginX: "auto" }}
                         primaryTypographyProps={{
                           textAlign: "center",
                           fontSize: { xs: "16px", sm: "18px" },
@@ -81,7 +81,10 @@ const Slider = ({ sliderBooks, authors }) => {
                     <ListItem>
                       <ListItemText primary="نویسنده: " />
                       <ListItemText
-                        primary={authors.find((author) => author.id === book.authorId)?.name}
+                        primary={
+                          authors.find((author) => author.id === book.authorId)
+                            ?.name
+                        }
                         primaryTypographyProps={{
                           textAlign: "start",
                           marginRight: "0.4rem",
