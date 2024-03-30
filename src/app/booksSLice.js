@@ -1,14 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAllBooks, addBook } from "../services/booksServices";
-import {STATUS} from "../utils/status";
+import { STATUS } from "../utils/status";
 const initialState = {
   books: [],
   booksStatus: STATUS.IDLE,
+  searchTerm: "",
 };
 export const booksSlice = createSlice({
   name: "books",
   initialState,
-  reducers: {},
+  reducers: {
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllBooksFromServer.pending, (state, _) => {
@@ -44,5 +49,8 @@ export const addBookToServer = createAsyncThunk(
 );
 
 export default booksSlice.reducer;
-export const selectBookById = (state, bookId)  => state.books.books.find(book => book.id === bookId)
-export const selectAllBooks = (state) => state.books.books
+export const { setSearchTerm } = booksSlice.actions;
+export const selectBookById = (state, bookId) =>
+  state.books.books.find((book) => book.id === bookId);
+export const selectAllBooks = (state) => state.books.books;
+export const selectSearchTerm = (state) => state.books.searchTerm;

@@ -7,3 +7,4 @@ export { default as DiscountedBooks } from "./components/DiscountedBooks";
 export { default as Footer } from "./components/Footer";
 export { default as BookCard } from "./components/BookCard";
 export { default as AllBooks } from "./Pages/AllBooks";
+export { default as SearchBooks } from "./Pages/SearchBooks";

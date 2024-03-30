@@ -13,8 +13,10 @@ import AutoStoriesOutlinedIcon from "@mui/icons-material/AutoStoriesOutlined";
 import LocalGroceryStoreOutlinedIcon from "@mui/icons-material/LocalGroceryStoreOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import ContactPhoneOutlinedIcon from "@mui/icons-material/ContactPhoneOutlined";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BackgroundImage from "../assets/NavbarAssets/Background.jpg";
+import { setSearchTerm, selectSearchTerm } from "../app/booksSLice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -89,6 +91,18 @@ const NavbarLinksIconsStyle = {
   marginRight: { xs: "0", md: "12px" },
 };
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const searchInputChangeHandler = (event) => {
+    dispatch(setSearchTerm(event.target.value));
+  };
+  const searchTerm = useSelector(selectSearchTerm);
+  const clickSearchIconHandler = () => {
+    if (searchTerm.length) {
+      navigate(`/books/search/${searchTerm}`);
+      dispatch(setSearchTerm(""));
+    }
+  };
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -98,7 +112,7 @@ const Navbar = () => {
               display: "flex",
               justifyContent: "space-between",
               width: { md: "90%" },
-              margin: { md : "0 auto"}
+              margin: { md: "0 auto" },
             }}
           >
             <IconButton
@@ -165,13 +179,14 @@ const Navbar = () => {
               </Link>
             </Box>
             <Search>
-              <SearchIconWrapper>
+              <SearchIconWrapper onClick={clickSearchIconHandler}>
                 <SearchIcon sx={{ zIndex: "1" }} />
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="جست و جو"
                 inputProps={{ "aria-label": "search" }}
                 sx={{ fontFamily: "Dirooz" }}
+                onChange={(event) => searchInputChangeHandler(event)}
               />
             </Search>
           </Toolbar>
