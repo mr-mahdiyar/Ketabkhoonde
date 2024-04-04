@@ -36,7 +36,7 @@ const SearchBooks = () => {
   }, [currentPageNumber]);
   useEffect(() => {
     gridRef.current.scrollIntoView({ behavior: "smooth" });
-  }, [searchTerm])
+  }, [searchTerm]);
   return (
     <>
       {books.length > 0 ? (
@@ -81,7 +81,6 @@ const SearchBooks = () => {
       ) : (
         <Box
           height={"100vh"}
-
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -89,7 +88,13 @@ const SearchBooks = () => {
           marginTop={0.5}
           bgcolor={"customGray.main"}
         >
-          <Typography fontFamily={"Ordibehesht"} variant="h3" textAlign={"center"}>متأسفانه کتاب مورد نظر یافت نشد!</Typography>
+          <Typography
+            fontFamily={"Ordibehesht"}
+            variant="h3"
+            textAlign={"center"}
+          >
+            متأسفانه کتاب مورد نظر یافت نشد!
+          </Typography>
         </Box>
       )}
     </>
