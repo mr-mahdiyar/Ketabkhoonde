@@ -3,7 +3,7 @@ import { Navbar, Intro, Slider, Footer } from "./";
 // import AddbookForm from "./components/AddbookForm";
 // import AddAuthorForm from "./components/AddAuthorForm";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllBooksFromServer, selectAllBooks } from "./app/booksSLice";
+import { getAllBooksFromServer, selectAllBooks } from "./app/booksSlice";
 import { selectAllAuthors, getAllAuthorsFromServer } from "./app/authorsSlice";
 import { Outlet, useLocation } from "react-router-dom";
 const App = () => {

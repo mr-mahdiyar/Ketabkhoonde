@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BookCard } from "../";
 import { useSelector } from "react-redux";
-import { selectAllBooks } from "../app/booksSLice";
+import { selectAllBooks } from "../app/booksSlice";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { selectAllAuthors } from "../app/authorsSlice";
@@ -31,6 +31,7 @@ const AllBooks = () => {
   }, [currentPageNumber]);
   return (
     <Box marginTop={0.5} bgcolor={"customGray.main"} paddingY={3} ref={gridRef}>
+      <title>همه کتاب ها</title>
       <Grid
         container
         columns={15}

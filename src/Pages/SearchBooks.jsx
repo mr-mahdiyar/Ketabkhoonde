@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BookCard } from "../";
 import { useSelector } from "react-redux";
-import { selectAllBooks } from "../app/booksSLice";
+import { selectAllBooks } from "../app/booksSlice";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { selectAllAuthors } from "../app/authorsSlice";
@@ -39,6 +39,7 @@ const SearchBooks = () => {
   }, [searchTerm]);
   return (
     <>
+    <title>جست و جوی کتاب {searchTerm}</title>
       {books.length > 0 ? (
         <Box
           marginTop={0.5}

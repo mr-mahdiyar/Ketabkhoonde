@@ -15,7 +15,7 @@ import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import ContactPhoneOutlinedIcon from "@mui/icons-material/ContactPhoneOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import BackgroundImage from "../assets/NavbarAssets/Background.jpg";
-import { setSearchTerm, selectSearchTerm } from "../app/booksSLice";
+import { setSearchTerm, selectSearchTerm } from "../app/booksSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Search = styled("div")(({ theme }) => ({
