@@ -19,3 +19,10 @@ export const addBook = (book) => {
     const url = `${serverUrl}/books`
     return axios.post(url, book)
 }
+
+// find book By Id
+
+export const getBookById = (bookId) => {
+    const url = `${serverUrl}/books/${bookId}`
+    return axios.get(url)
+}
