@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getAllBooks, addBook } from "../services/booksServices";
+import { getAllBooks, addBook, getBookById } from "../services/booksServices";
 import { STATUS } from "../utils/status";
 const initialState = {
   books: [],
   booksStatus: STATUS.IDLE,
   searchTerm: "",
+  singleBookById: {},
+  singleBookByIdStatus: STATUS.IDEL,
 };
 export const booksSlice = createSlice({
   name: "books",
@@ -28,6 +30,16 @@ export const booksSlice = createSlice({
       })
       .addCase(addBookToServer.fulfilled, (state, action) => {
         state.books.push(action.payload);
+      })
+      .addCase(getBookByIdFromServer.pending, (state, _) => {
+        state.singleBookByIdStatus = STATUS.LOADING;
+      })
+      .addCase(getBookByIdFromServer.fulfilled, (state, action) => {
+        state.singleBookByIdStatus = STATUS.FULFILLED;
+        state.singleBookById = action.payload;
+      })
+      .addCase(getBookByIdFromServer.rejected, (state) => {
+        state.singleBookByIdStatus = STATUS.REJECTED;
       });
   },
 });
@@ -48,9 +60,16 @@ export const addBookToServer = createAsyncThunk(
   }
 );
 
+export const getBookByIdFromServer = createAsyncThunk(
+  "getBookByIdFromServer",
+  async (bookId) => {
+    const response = await getBookById(bookId);
+    return response.data;
+  }
+);
+
 export default booksSlice.reducer;
 export const { setSearchTerm } = booksSlice.actions;
-export const selectBookById = (state, bookId) =>
-  state.books.books.find((book) => book.id === bookId);
+export const selectBookById = (state) => state.books.singleBookById
 export const selectAllBooks = (state) => state.books.books;
 export const selectSearchTerm = (state) => state.books.searchTerm;
