@@ -9,7 +9,6 @@ import { routes } from "./router/routes";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <ThemeProvider theme={myTheme}>
       <Provider store={store}>
         <RouterProvider router={routes}>
@@ -17,5 +16,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </RouterProvider>
       </Provider>
     </ThemeProvider>
-  </React.StrictMode>
 );
