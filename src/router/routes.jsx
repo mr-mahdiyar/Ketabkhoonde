@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { App, HomePage, AllBooks, SearchBooks } from "../";
+import { App, HomePage, AllBooks, SearchBooks, SingleBook } from "../";
 export const routes = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +16,10 @@ export const routes = createBrowserRouter([
       {
         path: "/books/search/:searchTerm",
         element: <SearchBooks />
+      },
+      {
+        path: "/books/:bookId",
+        element: <SingleBook />
       }
     ],
   },
