@@ -81,7 +81,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/books/"
+                to="/books/3l4y-OjCUc7tNIV33ZREu"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
@@ -95,7 +95,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/books/"
+                to="/books/7zZUlt-NciQMBPz9XAiK-"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
@@ -109,7 +109,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/books/"
+                to="/books/7zZUlt-NciQMBPz9XAiK-"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
@@ -178,7 +178,7 @@ const Footer = () => {
           <List>
             <ListItem disableGutters disablePadding>
               <ListItemText
-                primary="دسته بندی های پیشنهادی"
+                primary="نویسنده های پیشنهادی"
                 primaryTypographyProps={{
                   fontFamily: "Ordibehesht",
                   fontSize: "22px",
@@ -187,7 +187,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/authors/"
+                to="/authors/ZA5iuALjJn-UL7aar71as"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
@@ -201,7 +201,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/authors/"
+                to="/authors/MM-S2IhT7iF5zaWWMYjTa"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
@@ -215,7 +215,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/authors/"
+                to="/authors/32NPodEO1s5TRDfUhWA7m"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
