@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { App, HomePage, AllBooks, SearchBooks, SingleBook } from "../";
+import { App, HomePage, AllBooks, SearchBooks, SingleBook, AuthorsPage } from "../";
 export const routes = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +20,10 @@ export const routes = createBrowserRouter([
       {
         path: "/books/:bookId",
         element: <SingleBook />
+      },
+      {
+        path: "/authors/:authorId",
+        element: <AuthorsPage />
       }
     ],
   },

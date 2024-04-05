@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getBookByIdFromServer, selectBookById } from "../app/booksSlice";
 import { Box, Typography } from "@mui/material";
-import { selectAllAuthors } from "../app/authorsSlice";
+import { selectAllAuthors, getAuthorByIdFromServer, selectAuthorByID } from "../app/authorsSlice";
 
 const SingleBook = () => {
   const { bookId } = useParams();
@@ -52,7 +52,7 @@ const SingleBook = () => {
           className="texts-wrapper"
           component={"div"}
           display={"flex"}
-          width={{ xs: "95%", sm: "95%",md: "100%", lg: "70%" }}
+          width={{ xs: "95%", sm: "95%", md: "100%", lg: "70%" }}
           flexDirection={"column"}
         >
           <Box
@@ -101,10 +101,12 @@ const SingleBook = () => {
             height={"100%"}
             mx={"auto"}
             flexDirection={{ xs: "column", lg: "row" }}
+            marginTop={"2%"}
+            gap={3}
           >
             <Box
               component={"div"}
-              width={{ xs: "100%" ,lg: "40%", }}
+              width={{ xs: "100%", lg: "40%" }}
               display={"flex"}
               flexDirection={"column"}
               justifyContent={"space-evenly"}
@@ -118,8 +120,17 @@ const SingleBook = () => {
                 textAlign={{ xs: "center", sm: "right" }}
                 marginTop={{ xs: 2, lg: 0 }}
               >
-                <Typography>نام کتاب:</Typography>
-                <Typography>&nbsp;{book?.name}</Typography>
+                <Typography
+                  fontFamily={"Diplomat"}
+                  fontSize={"22px"}
+                  textOverflow={"hidden"}
+                  whiteSpace={"nowrap"}
+                >
+                  نام کتاب:
+                </Typography>
+                <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                  &nbsp;{book?.name}
+                </Typography>
               </Box>
               <Box
                 component={"div"}
@@ -129,8 +140,10 @@ const SingleBook = () => {
                 textAlign={{ xs: "center", sm: "right" }}
                 marginTop={{ xs: 2, lg: 0 }}
               >
-                <Typography>نویسنده کتاب:</Typography>
-                <Typography>
+                <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                  نویسنده کتاب:
+                </Typography>
+                <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
                   &nbsp;
                   {
                     authors?.find((author) => author.id === book?.authorId)
@@ -146,8 +159,12 @@ const SingleBook = () => {
                 textAlign={{ xs: "center", sm: "right" }}
                 marginTop={{ xs: 2, lg: 0 }}
               >
-                <Typography>انتشارات:</Typography>
-                <Typography>&nbsp;{book?.publisher}</Typography>
+                <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                  انتشارات:
+                </Typography>
+                <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                  &nbsp;{book?.publisher}
+                </Typography>
               </Box>
               <Box
                 component={"div"}
@@ -159,26 +176,40 @@ const SingleBook = () => {
               >
                 {book?.translator ? (
                   <>
-                    <Typography>مترجم:</Typography>
-                    <Typography>&nbsp;{book?.translator}</Typography>
+                    <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                      مترجم:
+                    </Typography>
+                    <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                      &nbsp;{book?.translator}
+                    </Typography>
                   </>
                 ) : (
-                  <Typography>این کتاب به زبان فارسی نوشته شده است.</Typography>
+                  <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+                    این کتاب به زبان فارسی نوشته شده است.
+                  </Typography>
                 )}
               </Box>
               <Box>
-                <Typography marginTop={{ xs: 2, lg: 0 }}>
+                <Typography
+                  marginTop={{ xs: 2, lg: 0 }}
+                  fontFamily={"Diplomat"}
+                  fontSize={"22px"}
+                >
                   تعداد صفحات:&nbsp;{book?.pageNumbers}
                 </Typography>
               </Box>
             </Box>
             <Box
               component={"div"}
-              width={{ xs: "100%", lg: "60%" }}
+              width={{ xs: "100%", lg: "70%" }}
               marginY={"auto"}
               marginTop={{ xs: 2, lg: 0 }}
             >
-              <Typography textAlign={"justify"}>
+              <Typography
+                textAlign={"justify"}
+                fontFamily={"Diplomat"}
+                fontSize={"22px"}
+              >
                 {book?.textIntroduction}
               </Typography>
             </Box>
@@ -192,10 +223,14 @@ const SingleBook = () => {
           pr={3}
           borderBottom={"2px solid black"}
           pb={2}
+          fontFamily={"Ordibehesht"}
+          fontSize={"22px"}
         >
           نقد کتاب
         </Typography>
-        <Typography>{book?.bookReview}</Typography>
+        <Typography fontFamily={"Diplomat"} fontSize={"22px"}>
+          {book?.bookReview}
+        </Typography>
         <Box
           className="audio-introduction-wrapper"
           component={"div"}
@@ -208,16 +243,18 @@ const SingleBook = () => {
             pr={3}
             borderBottom={"2px solid black"}
             pb={2}
+            fontFamily={"Ordibehesht"}
+            fontSize={"22px"}
           >
             تیکه های شنیدنی کتاب
           </Typography>
-          <Box className="audio-wrapper" width={{ xs: "90%", md: "70%" }} mx={"auto"}>
+          <Box
+            className="audio-wrapper"
+            width={{ xs: "90%", md: "70%" }}
+            mx={"auto"}
+          >
             {showAudioIntroduction ? (
-              <audio
-                controls
-                preload="metadata"
-                style={{ width: "100%" }}
-              >
+              <audio controls preload="metadata" style={{ width: "100%" }}>
                 <source src={book?.audioIntroduction} type="audio/mpeg" />
               </audio>
             ) : null}

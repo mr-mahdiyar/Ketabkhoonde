@@ -13,3 +13,9 @@ export const addAuthor = (author) => {
     const url = `${serverUrl}/authors`;
     return axios.post(url, author)
 }
+
+// find author by ID
+export const getAuthorById = (authorId) => {
+  const url = `${serverUrl}/authors/${authorId}`;
+    return axios.get(url)
+}
