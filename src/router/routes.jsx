@@ -7,7 +7,8 @@ import {
   SingleBook,
   AuthorsPage,
   AboutUs,
-  ContactMe
+  ContactMe,
+  NotFoundPage
 } from "../";
 export const routes = createBrowserRouter([
   {
@@ -43,5 +44,6 @@ export const routes = createBrowserRouter([
         element: <ContactMe />
       }
     ],
+    errorElement: <NotFoundPage />
   },
 ]);
