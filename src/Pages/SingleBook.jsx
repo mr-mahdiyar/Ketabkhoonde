@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getBookByIdFromServer, selectBookById } from "../app/booksSlice";
 import { Box, Typography } from "@mui/material";
-import { selectAllAuthors, getAuthorByIdFromServer, selectAuthorByID } from "../app/authorsSlice";
+import { selectAllAuthors } from "../app/authorsSlice";
 
 const SingleBook = () => {
   const { bookId } = useParams();
   const authors = useSelector(selectAllAuthors);
   const dispatch = useDispatch();
   const [showAudioIntroduction, setShowAudioIntroduction] = useState(false);
+  const bookInformationSection = useRef()
   useEffect(() => {
     setShowAudioIntroduction(false);
     dispatch(getBookByIdFromServer(bookId))
       .then(() => setShowAudioIntroduction(true))
       .catch(() => setShowAudioIntroduction(false));
+      bookInformationSection.current.scrollIntoView({behavior: "smooth"})
   }, [bookId]);
 
   const book = useSelector(selectBookById);
@@ -35,6 +37,7 @@ const SingleBook = () => {
         alignItems={"center"}
         mx={"auto"}
         flexDirection={{ xs: "column", lg: "row" }}
+        ref={bookInformationSection}
       >
         <Box
           component={"div"}
