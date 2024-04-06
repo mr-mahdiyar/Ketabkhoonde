@@ -11,3 +11,4 @@ export { default as SearchBooks } from "./Pages/SearchBooks";
 export { default as SingleBook } from "./Pages/SingleBook";
 export { default as AuthorsPage } from "./Pages/AuthorsPage";
 export { default as AboutUs } from "./Pages/AboutUs";
+export { default as ContactMe } from "./Pages/ContactMe";

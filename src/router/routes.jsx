@@ -7,6 +7,7 @@ import {
   SingleBook,
   AuthorsPage,
   AboutUs,
+  ContactMe
 } from "../";
 export const routes = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const routes = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />
+      },
+      {
+        path: "/contact",
+        element: <ContactMe />
       }
     ],
   },
