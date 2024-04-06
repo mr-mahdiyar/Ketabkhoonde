@@ -4,6 +4,7 @@ import React from "react";
 const AboutUs = () => {
   return (
     <Box component={"div"} width={"100"} bgcolor={"customGray.main"} mt={0.5}>
+      <title>درباره من و کتابخونده</title>
       <Box component={"div"} maxWidth={"80%"} p={4} mx={"auto"}>
         <Typography variant="p" fontFamily={"Diplomat"} fontSize={"22px"}>
           بسم الله الرحمن الرحیم <br /><br /> ایده کتابخونده با هدف ارتقا فرهنگ کتابخوانی و

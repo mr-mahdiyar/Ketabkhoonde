@@ -7,6 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 const ContactMe = () => {
   return (
     <Box component={"div"} width={"100"} bgcolor={"customGray.main"} mt={0.5}>
+        <title>تماس با ما</title>
       <Box component={"div"} maxWidth={"80%"} p={4} mx={"auto"}>
         <Typography fontFamily={"Diplomat"} variant="h5">
           جهت ارتباط با بنده می توانید از طرق زیر اقدام فرمایید: <br />
