@@ -56,7 +56,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/contact"
+                to="/about"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
@@ -109,7 +109,7 @@ const Footer = () => {
             </ListItem>
             <ListItem disableGutters disablePadding>
               <Link
-                to="/books/7zZUlt-NciQMBPz9XAiK-"
+                to="/books/IH0O2wrfS6k9z3n1y9-LF"
                 className="text-black duration-200 hover:text-customOrange"
               >
                 <ListItemText
