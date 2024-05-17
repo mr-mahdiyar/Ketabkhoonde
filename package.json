@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": " concurrently \" vite --port 3000 \" \" cd ./server && npm run dev \"",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.17",
     "@reduxjs/toolkit": "^2.2.2",
     "axios": "^1.6.8",
+    "concurrently": "^8.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
